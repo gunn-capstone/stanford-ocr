@@ -201,6 +201,8 @@ public class Detect {
     }
   }
 
+  //DONT NEED
+  
   /**
    * Detects faces in the specified local image.
    *
@@ -255,6 +257,9 @@ public class Detect {
    * @throws IOException on Input/Output errors.
    */
   // [START vision_face_detection_gcs]
+  
+  //DONT NEED
+  
   public static void detectFacesGcs(String gcsPath, PrintStream out) throws Exception,
       IOException {
     List<AnnotateImageRequest> requests = new ArrayList<>();
