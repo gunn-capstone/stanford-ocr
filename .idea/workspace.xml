@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1981106d-1d12-4cdf-b13e-8c871b2275ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StanfordSurveyImagetoText/StanfordSurveyImagetoText.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StanfordSurveyImagetoText/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StanfordSurveyImagetoText/src/main/java/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StanfordSurveyImagetoText/src/package.json" beforeDir="false" />
-    </list>
+    <list default="true" id="1981106d-1d12-4cdf-b13e-8c871b2275ed" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -145,12 +139,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1569533742793</updated>
-      <workItem from="1569533744106" duration="751000" />
+      <workItem from="1569533744106" duration="977000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="751000" />
+    <option name="totallyTimeSpent" value="977000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
