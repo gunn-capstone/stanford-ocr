@@ -8,10 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
-    public static void main(String[] args){
-        detectText();
+    public static void main(String[] args) {
+        try {
+            detectText("/path/to/file", System.out);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-    public static void detectText(String filePath, PrintStream out) throws Exception, IOException {
+
+    private static void detectText(String filePath, PrintStream out) throws Exception, IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
         ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
