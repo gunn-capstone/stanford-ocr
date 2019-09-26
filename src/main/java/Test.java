@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
-    public static void main(String[] args)throws Exception{
-        detectDocumentText("C:/Users/justi/StanfordSurveyImagetoText/src/main/resources/download.jpg",System.out);
+    public static void main(String[] args) throws Exception {
+        detectDocumentText("C:/Users/justi/StanfordSurveyImagetoText/src/main/resources/download.jpg", System.out);
     }
+
     public static void detectDocumentText(String filePath, PrintStream out) throws Exception,
             IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
@@ -37,28 +38,28 @@ public class Test {
 
                 // For full list of available annotations, see http://g.co/cloud/vision/docs
                 TextAnnotation annotation = res.getFullTextAnnotation();
-                for (Page page: annotation.getPagesList()) {
-                    String pageText = "";
+                for (Page page : annotation.getPagesList()) {
+                    StringBuilder pageText = new StringBuilder();
                     for (Block block : page.getBlocksList()) {
-                        String blockText = "";
+                        StringBuilder blockText = new StringBuilder();
                         for (Paragraph para : block.getParagraphsList()) {
                             String paraText = "";
-                            for (Word word: para.getWordsList()) {
-                                String wordText = "";
-                                for (Symbol symbol: word.getSymbolsList()) {
-                                    wordText = wordText + symbol.getText();
+                            for (Word word : para.getWordsList()) {
+                                StringBuilder wordText = new StringBuilder();
+                                for (Symbol symbol : word.getSymbolsList()) {
+                                    wordText.append(symbol.getText());
                                     out.format("Symbol text: %s (confidence: %f)\n", symbol.getText(),
                                             symbol.getConfidence());
                                 }
-                                out.format("Word text: %s (confidence: %f)\n\n", wordText, word.getConfidence());
-                                paraText = String.format("%s %s", paraText, wordText);
+                                out.format("Word text: %s (confidence: %f)\n\n", wordText.toString(), word.getConfidence());
+                                paraText = String.format("%s %s", paraText, wordText.toString());
                             }
                             // Output Example using Paragraph:
                             out.println("\nParagraph: \n" + paraText);
                             out.format("Paragraph Confidence: %f\n", para.getConfidence());
-                            blockText = blockText + paraText;
+                            blockText.append(paraText);
                         }
-                        pageText = pageText + blockText;
+                        pageText.append(blockText);
                     }
                 }
                 out.println("\nComplete annotation:");
