@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
 	<title>Stanford Hospital Database System</title>
 </head>
@@ -8,8 +8,12 @@
 	<h1>Welcome to Stanford Hospital's Database System!</h1>
 	<form method="post" action="/addname">
 		<label>Enter Your Name</label><br>
-		<input type="text" name="firstName" placeholder="Enter first name..." required>
-		<input type="text" name="lastName" placeholder="Enter last name..." required>
+		<label>
+			<input type="text" name="firstName" placeholder="Enter first name..." required>
+		</label>
+		<label>
+			<input type="text" name="lastName" placeholder="Enter last name..." required>
+		</label>
 
 		<!-- pdf file upload -->
 		<form enctype="multipart/form-data" action="/upload/image" method="post">

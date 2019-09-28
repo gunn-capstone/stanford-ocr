@@ -1,4 +1,4 @@
-# StanfordSurveyImagetoText
+# StanfordOCR
 [![Discord][discord-shield]][discord-url]
 [![Issues][issues-shield]][issues-url]
 

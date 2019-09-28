@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const port = 3000;
 
 // middleware 
 const bodyParser = require('body-parser');
@@ -15,15 +14,15 @@ Grid = mongoose.Grid;
 mongoose.connect("mongodb://localhost:27017/node-demo", {useNewUrlParser: true }, function (err, db) {
     if (err) return console.dir(err);
 
-	let grid = new Grid(db, 'fs');
-	let buffer = new Buffer("Hello world");
-	grid.put(buffer, {metadata: {category: 'text'}, content_type: 'text'}, function (err, fileInfo) {
-        grid.get(fileInfo._id, function (err, data) {
-            console.log("Retrieved data: " + data.toString());
-            grid.delete(fileInfo._id, function (err, result) {
-            });
-        });
-    });
+	// let grid = new Grid(db, 'fs');
+	// let buffer = new Buffer("Hello world");
+	// grid.put(buffer, {metadata: {category: 'text'}, content_type: 'text'}, function (err, fileInfo) {
+    //     grid.get(fileInfo._id, function (err, data) {
+    //         console.log("Retrieved data: " + data.toString());
+    //         grid.delete(fileInfo._id, function (err, result) {
+    //         });
+    //     });
+    // });
 });
 
 
@@ -50,6 +49,7 @@ app.post("/addname", (req, res) => {
         });
 });
 
-app.listen(port, () => {
-    console.log("Server listening on port " + port);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}...`);
 });
