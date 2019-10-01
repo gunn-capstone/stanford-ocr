@@ -11,24 +11,26 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-Grid = mongo.Grid;
+// Grid = mongo.Grid;
 
 // mongoose.connect("mongodb://localhost:27017/node-demo");
-// mongoose.connect("mongodb://localhost:27017/node-demo", { useNewUrlParser: true });
+//mongoose.connect("mongodb://localhost:27017/node-demo", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost:27017/node-demo", 
+	{useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
 
-mongoose.connect("mongodb://localhost:27017/node-demo", function(err, db) {
-	if(err) return console.dir(err);
+// mongoose.connect("mongodb://localhost:27017/node-demo", function(err, db) {
+// 	if(err) return console.dir(err);
 
-	var grid = new Grid(db, 'fs');
-	var buffer = new Buffer("Hello world");
-	grid.put.(buffer, {metadata:{category:'text'}, content_type: 'text'}, function(err, fileInfo) {
-		grid.get(fileInfo._id, function(err, data) {
-			console.log("Retrieved data: " + data.toString());
-			grid.delete(fileInfo._id, function(err, result) {
-			});
-		});
-	});
-});
+// 	var grid = new Grid(db, 'fs');
+// 	var buffer = new Buffer("Hello world");
+// 	grid.put.(buffer, {metadata:{category:'text'}, content_type: 'text'}, function(err, fileInfo) {
+// 		grid.get(fileInfo._id, function(err, data) {
+// 			console.log("Retrieved data: " + data.toString());
+// 			grid.delete(fileInfo._id, function(err, result) {
+// 			});
+// 		});
+// 	});
+// });
 
 
 var nameSchema = new mongoose.Schema({
@@ -52,6 +54,14 @@ app.post("/addname", (req, res) => {
 	.catch(err => {
 		res.status(400).send("unable to save to database");
 	});
+});
+
+app.get('/data', function (req, res,html) {
+	res.sendFile(__dirname+'/data.html');
+});
+
+app.get('/index', function (req, res,html) {
+	res.sendFile(__dirname+'/index.html');
 });
 
 app.listen(port, () => {
