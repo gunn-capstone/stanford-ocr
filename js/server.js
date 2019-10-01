@@ -11,7 +11,8 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb://localhost:27017/node-demo",
-    {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true}).then(r => {}) ;
+    {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+
 
 const nameSchema = new mongoose.Schema({
     firstName: String,
@@ -23,6 +24,7 @@ const User = mongoose.model("User", nameSchema);
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
+// node app.js
 
 app.post("/addname", (req, res) => {
     let myData = new User(req.body);
