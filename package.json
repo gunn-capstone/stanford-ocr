@@ -2,7 +2,7 @@
   "name": "stanford_ocr",
   "version": "1.0.1",
   "description": "js module for webapp",
-  "main": "app.js",
+  "main": "js/server.js",
   "scripts": {
     "start": "node js/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

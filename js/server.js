@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
 mongoose.connect("mongodb://localhost:27017/node-demo",
-    {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true });
+    {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true}).then(r => {}) ;
 
 
 const nameSchema = new mongoose.Schema({
