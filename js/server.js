@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+const mongodb = require('mongodb');
+const http = require('http');
+const nconf = require('nconf');
+
 // middleware
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -10,9 +14,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost:27017/node-demo",
+mongoose.connect("mongodb://localhost:27017b/node-demo",
     {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true}).then(r => {}) ;
-
 
 const nameSchema = new mongoose.Schema({
     firstName: String,
@@ -24,7 +27,6 @@ const User = mongoose.model("User", nameSchema);
 app.get("/", (req, res) => {
     res.sendFile(__dirname + "/index.html");
 });
-// node app.js
 
 app.post("/addname", (req, res) => {
     let myData = new User(req.body);
