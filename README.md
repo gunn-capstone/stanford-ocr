@@ -1,4 +1,8 @@
-# StanfordOCR
+<div >
+  <img src="http://med.stanford.edu/content/dam/sm/sm-news/images/2016/01/sm-logo.jpg" alt="Stanford Medicine Logo">
+</div>
+
+# [StanfordOCR](https://stanford-ocr.appspot.com)
 [![Discord][discord-shield]][discord-url]
 [![Issues][issues-shield]][issues-url]
 
