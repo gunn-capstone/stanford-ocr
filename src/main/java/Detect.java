@@ -322,7 +322,7 @@ public class Detect {
      * @throws IOException on Input/Output errors.
      */
     // [START vision_label_detection]
-    public static void detectLabels(String filePath, PrintStream out) throws Exception, IOException {
+    private static void detectLabels(String filePath, PrintStream out) throws Exception, IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
         ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
@@ -362,7 +362,7 @@ public class Detect {
      * @throws IOException on Input/Output errors.
      */
     // [START vision_label_detection_gcs]
-    public static void detectLabelsGcs(String gcsPath, PrintStream out) throws Exception,
+    private static void detectLabelsGcs(String gcsPath, PrintStream out) throws Exception,
             IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
@@ -561,7 +561,7 @@ public class Detect {
      * @throws IOException on Input/Output errors.
      */
     // [START vision_logo_detection_gcs]
-    public static void detectLogosGcs(String gcsPath, PrintStream out) throws Exception,
+    private static void detectLogosGcs(String gcsPath, PrintStream out) throws Exception,
             IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
@@ -600,7 +600,7 @@ public class Detect {
      * @throws IOException on Input/Output errors.
      */
     // [START vision_text_detection]
-    public static void detectText(String filePath, PrintStream out) throws Exception, IOException {
+    private static void detectText(String filePath, PrintStream out) throws Exception, IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
 
         ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
