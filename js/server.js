@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+
 const port = 8080;
 const admin = require('firebase-admin');
 
@@ -40,11 +41,26 @@ app.post('/addname', (req, res) => {
 app.get('/data', function (req, res,html) {
     res.sendFile(__dirname+'/data.html');
 });
+// node app.js
+
+app.post("/addname", (req, res) => {
+    let myData = new User(req.body);
+    myData.save()
+        .then(item => {
+            res.send("item saved to database");
+        })
+        .catch(err => {
+            res.status(400).send("unable to save to database");
+        });
+});
+
+app.get('/data', function (req, res,html) {
+    res.sendFile(__dirname+'/data.html');
+});
 
 app.get('/index', function (req, res,html) {
     res.sendFile(__dirname+'/index.html');
 });
 
 app.listen(port, () => {
-    console.log('Server listening on port ' + port);
-});
+    console.log("Server listening on port " + port);
