@@ -1,5 +1,5 @@
 // Imports the Google Cloud client library
-/*
+
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.AnnotateImageResponse;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -9,19 +9,22 @@ import com.google.cloud.vision.v1.Feature.Type;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.ImageAnnotatorClient;
 import com.google.protobuf.ByteString;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-
+/*
 public class Test {
     public static void main(String... args) throws Exception {
         // Instantiates a client
         try (ImageAnnotatorClient vision = ImageAnnotatorClient.create()) {
 
             // The path to the image file to annotate
-            String fileName = "./resources/wakeupcat.jpg";
+            String fileName = "/Users/95041754/StanfordSurveyImagetoText/src/main/resources/helloImage.jpg";
 
             // Reads the image file into memory
             Path path = Paths.get(fileName);
@@ -56,23 +59,43 @@ public class Test {
         }
     }
 }*/
+public class Test{
+    public static void main(String[] args)throws Exception{
+       // detectText("/Users/95041754/StanfordSurveyImagetoText/src/main/resources/image1.jpeg",System.out);
+        detectText("/Users/95041754/StanfordSurveyImagetoText/src/main/resources/image1.jpeg",System.out);
+    }
+    private BufferedImage cropImage(BufferedImage src, Rectangle rect, int x, int y) {
+        BufferedImage dest = src.getSubimage(x, y, rect.width, rect.height);
+        return dest;
+    }
 
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.BucketInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
+    public static void detectText(String filePath, PrintStream out) throws Exception, IOException {
+        List<AnnotateImageRequest> requests = new ArrayList<>();
 
-public class Test {
-    public static void main(String... args) {
-        // Instantiates a client
-        Storage storage = StorageOptions.getDefaultInstance().getService();
+        ByteString imgBytes = ByteString.readFrom(new FileInputStream(filePath));
 
-        // The name for the new bucket
-        String bucketName = args[0];  // "my-new-bucket";
+        Image img = Image.newBuilder().setContent(imgBytes).build();
+        Feature feat = Feature.newBuilder().setType(Type.TEXT_DETECTION).build();
+        AnnotateImageRequest request =
+                AnnotateImageRequest.newBuilder().addFeatures(feat).setImage(img).build();
+        requests.add(request);
 
-        // Creates the new bucket
-        Bucket bucket = storage.create(BucketInfo.of(bucketName));
+        try (ImageAnnotatorClient client = ImageAnnotatorClient.create()) {
+            BatchAnnotateImagesResponse response = client.batchAnnotateImages(requests);
+            List<AnnotateImageResponse> responses = response.getResponsesList();
 
-        System.out.printf("Bucket %s created.%n", bucket.getName());
+            for (AnnotateImageResponse res : responses) {
+                if (res.hasError()) {
+                    out.printf("Error: %s\n", res.getError().getMessage());
+                    return;
+                }
+
+                // For full list of available annotations, see http://g.co/cloud/vision/docs
+                for (EntityAnnotation annotation : res.getTextAnnotationsList()) {
+                    out.printf("Text: %s\n", annotation.getDescription());
+                    out.printf("Position : %s\n", annotation.getBoundingPoly());
+                }
+            }
+        }
     }
 }
