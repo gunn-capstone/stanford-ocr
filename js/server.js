@@ -5,7 +5,8 @@ const port = 8080;
 const admin = require('firebase-admin');
 
 admin.initializeApp({
-    credential: admin.credential.applicationDefault(),
+    credential: admin.credential.cert(JSON.parse(process.env.GCP_CRED)),
+    // credential: admin.credential.applicationDefault(),
     databaseURL: 'https://stanford-ocr.firebaseio.com'
 });
 
@@ -29,12 +30,14 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
+
 app.post('/addname', (req, res) => {
     console.log('posted');
-    let dataRef = dataCollection.doc(hashCode(req.getElementById('lastName')).toString());
+    console.log(req.body);
+    let dataRef = dataCollection.doc(hashCode(req.body.lastName).toString());
     let setData = dataRef.set({
-        lastName: req.getElementById('lastName'),
-        firstName: req.getElementById('firstName')
+        lastName: req.body.lastName,
+        firstName: req.body.firstName
     }, {merge: true});
     res.send('gay');
 });
@@ -52,5 +55,5 @@ app.get('/index', function (req, res, html) {
 });
 
 app.listen(port, () => {
-    console.log("Server listening on port " + port)
+    console.log("Server listening on port " + port);
 });
