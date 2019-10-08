@@ -9,9 +9,14 @@ admin.initializeApp({
     databaseURL: 'https://stanford-ocr.firebaseio.com'
 });
 
+<<<<<<< HEAD
+mongoose.connect("mongodb://localhost:27017/node-demo",
+    {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true}).then(r => {}) ;
+=======
 const db = admin.firestore();
 const pdfCollection = db.collection('pdfCollection');
 const dataCollection = db.collection('dataCollection');
+>>>>>>> eb16366c91ce60d100451123d7d46156af4b72bf
 
 function hashCode(s) {
     let h = 0, l = s.length, i = 0;
