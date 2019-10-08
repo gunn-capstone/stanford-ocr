@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <title>Stanford Hospital Database System</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Stanford Hospital Database System</title>
 </head>
-
-<h1>Welcome to Stanford Hospital's Database System!</h1>
-<a href="/data">View the Database</a>
-<form method="post" action="/addname">
-    <label>Enter Your Name</label><br>
-    <label>
-        <input type="text" name="firstName" placeholder="Enter first name..." required>
-    </label>
-    <label>
-        <input type="text" name="lastName" placeholder="Enter last name..." required>
-    </label>
-    <!-- pdf file upload -->
-    <form enctype="multipart/form-data" action="/upload/image" method="post" name="Upload File">
-        Upload a scanned PDF to the database.
-        <input id="image-file" type="file"/>
-    </form>
-
-	<input type="submit" value="Add Name">
-</form>
-</html>
+<body>
+	<div id="title">
+		<h1>Welcome to Stanford Hospital's Database System!</h1>
+	</div>
+	<form method="post" action="/addname">
+		<label>Enter Your Name</label><br>
+		<label>
+			<input type="text" name="firstName" placeholder="Enter first name..." required>
+		</label>
+		<label>
+			<input type="text" name="lastName" placeholder="Enter last name..." required>
+		</label>
+		<input type="submit" value="Add Name">
+		<!-- pdf file upload -->
+		<div id="pdf">
+			<p> Upload a scanned PDF to the database. </p>
+			<form enctype="multipart/form-data" action="/upload/image" method="post" name="Upload File">
+				<input type="file"  class="pdf"/>
+			</form>
+		</div>
+	</form>
+	<div id="download">
+		<a href="data.html" class="button">Download the Spreadsheet</a>
+	</div>
+	</body>
+	</html>
