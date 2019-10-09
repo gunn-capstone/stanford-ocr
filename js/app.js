@@ -1,12 +1,13 @@
 const express = require('express');
 const app = express();
+app.use(express.static(__dirname));
 
 const port = 8080;
 const admin = require('firebase-admin');
 
 admin.initializeApp({
-    credential: admin.credential.cert(JSON.parse(process.env.GCP_CRED)),
-    // credential: admin.credential.applicationDefault(),
+    // credential: admin.credential.cert(JSON.parse(process.env.GCP_CRED)),
+    credential: admin.credential.applicationDefault(),
     databaseURL: 'https://stanford-ocr.firebaseio.com'
 });
 
@@ -32,8 +33,6 @@ app.get('/', (req, res) => {
 
 
 app.post('/addname', (req, res) => {
-    console.log('posted');
-    console.log(req.body);
     let dataRef = dataCollection.doc(hashCode(req.body.lastName).toString());
     let setData = dataRef.set({
         lastName: req.body.lastName,
