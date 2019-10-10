@@ -6,7 +6,6 @@ const port = 8080;
 const admin = require('firebase-admin');
 
 admin.initializeApp({
-    // credential: admin.credential.cert(JSON.parse(process.env.GCP_CRED)),
     credential: admin.credential.applicationDefault(),
     databaseURL: 'https://stanford-ocr.firebaseio.com'
 });
