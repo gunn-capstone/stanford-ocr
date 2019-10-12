@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-app.use(express.static(__dirname));
+const dirPublic = (__dirname + '/../public');
+app.use(express.static(dirPublic));
 
 const port = 8080;
 const admin = require('firebase-admin');
@@ -18,7 +19,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(dirPublic + '/index.html');
 });
 
 
@@ -40,15 +41,15 @@ app.post('/addparticipant', (req, res) => { // TODO data validation
 });
 
 app.get('/data', function (req, res, html) {
-    res.sendFile(__dirname + '/data.html');
+    res.sendFile(dirPublic + '/data.html');
 });
 
 app.get('/data', function (req, res, html) {
-    res.sendFile(__dirname + '/data.html');
+    res.sendFile(dirPublic + '/data.html');
 });
 
 app.get('/index', function (req, res, html) {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(dirPublic + '/index.html');
 });
 
 app.listen(port, () => {
