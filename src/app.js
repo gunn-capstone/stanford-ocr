@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-app.use(express.static(__dirname));
+const dirPublic = (__dirname + '/../public');
+app.use(express.static(dirPublic));
 
 const port = 8080;
 const admin = require('firebase-admin');
@@ -11,31 +12,30 @@ admin.initializeApp({
 });
 
 const db = admin.firestore();
-const pdfCollection = db.collection('pdfCollection');
 const dataCollection = db.collection('dataCollection');
-
-function hashCode(s) {
-    let h = 0, l = s.length, i = 0;
-    if (l > 0)
-        while (i < l)
-            h = (h << 5) - h + s.charCodeAt(i++) | 0;
-    return h;
-}
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(dirPublic + '/index.html');
 });
 
 
-app.post('/addname', (req, res) => {
-    let dataRef = dataCollection.doc(hashCode(req.body.lastName).toString());
+app.post('/addparticipant', (req, res) => { // TODO data validation
+    let dataRef = dataCollection.doc(req.body.id);
     let setData = dataRef.set({
-        lastName: req.body.lastName,
-        firstName: req.body.firstName
+        id: req.body.id, // TODO for loop
+        age: req.body.age,
+        gender: req.body.gender,
+        specialty: req.body.specialty,
+        years: req.body.years,
+        percent: req.body.percent,
+        activities: req.body.activities,
+        additional: req.body.additional,
+        name: req.body.name,
+        email: req.body.email
     }, {merge: true});
     res.send('gay');
 });
@@ -50,15 +50,15 @@ app.post('/upload', (req, res) => {
 });
 
 app.get('/data', function (req, res, html) {
-    res.sendFile(__dirname + '/data.html');
+    res.sendFile(dirPublic + '/data.html');
 });
 
 app.get('/data', function (req, res, html) {
-    res.sendFile(__dirname + '/data.html');
+    res.sendFile(dirPublic + '/data.html');
 });
 
 app.get('/index', function (req, res, html) {
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(dirPublic + '/index.html');
 });
 
 app.listen(port, () => {
