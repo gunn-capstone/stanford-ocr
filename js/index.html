@@ -1,32 +1,56 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- dark mode css -->
+    <link rel="stylesheet" type="text/css" href="dark_css.css"> 
+
+    <link rel="stylesheet" href="style.css">
+
     <title>Stanford Hospital Database System</title>
 </head>
 <body>
-<div id="title">
-    <h1>Welcome to Stanford Hospital's Database System!</h1>
+    <div class="wrapper">
+
+        <div id="title">
+            <h1>Welcome to Stanford Hospital's Database System!</h1>
+        </div>
+        <form method="post" action="/addname">
+            <label>Enter Your Name</label><br>
+            <label>
+                <input type="text" name="firstName" placeholder="Enter first name..." required>
+            </label>
+            <label>
+                <input type="text" name="lastName" placeholder="Enter last name..." required>
+            </label>
+            <input type="submit" value="Add Name">
+        </form>
+        <!-- pdf file upload -->
+        <div id="pdf">
+           <form enctype="multipart/form-data" action="/upload" method="post" name="Upload File">
+              Upload a scanned PDF to the database.
+              <input id="image-file" type="file"/>
+              <button type = "submit">Upload</button>
+          </form>
+      </div>
+      <div id="download">
+       <a href="data.html" class="button">Download the Spreadsheet</a>
+   </div>
+
+   <!-- dark mode button -->
+
+   <input type="checkbox" name="" id="switch">
+   <label for="switch" class="switch-label">
+    <div class="toggle"></div>
+</label>
+
 </div>
-<form method="post" action="/addname">
-    <label>Enter Your Name</label><br>
-    <label>
-        <input type="text" name="firstName" placeholder="Enter first name..." required>
-    </label>
-    <label>
-        <input type="text" name="lastName" placeholder="Enter last name..." required>
-    </label>
-    <input type="submit" value="Add Name">
-</form>
-<!-- pdf file upload -->
-<div id="pdf">
-	<form enctype="multipart/form-data" action="/upload/image" method="post" name="Upload File">
-		Upload a scanned PDF to the database.
-		<input id="image-file" type="file"/>
-	</form>
-</div>
-<div id="download">
-	<a href="data.html" class="button">Download the Spreadsheet</a>
-</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+<script src="/dark_script.js"></script>
+
 </body>
 </html>

@@ -40,6 +40,15 @@ app.post('/addname', (req, res) => {
     res.send('gay');
 });
 
+app.post('/upload', (req, res) => {
+    // let dataRef = dataCollection.doc(hashCode(req.body.lastName).toString());
+    // let setData = dataRef.set({
+    //     lastName: req.body.lastName,
+    //     firstName: req.body.firstName
+    // }, {merge: true});
+    res.send('gay');
+});
+
 app.get('/data', function (req, res, html) {
     res.sendFile(__dirname + '/data.html');
 });
