@@ -48,5 +48,10 @@ public class Detect {
                 }
             }
         }
+        catch (IOException e){
+            System.out.println("Credentials not detected, see discord for .json");
+            e.printStackTrace();
+            System.exit(1);
+        }
     }
 }
