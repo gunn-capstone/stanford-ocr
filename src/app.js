@@ -19,8 +19,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    // res.sendFile(dirPublic + '/form.html');
-    res.sendFile('form.html', {root: './public/views'});
+    console.log('happened');
+    res.sendFile(dirPublic + '/form.html');
 });
 
 
@@ -63,6 +63,7 @@ app.get('/data', function (req, res, html) {
 });
 
 app.get('/index', function (req, res, html) {
+    console.log('happened');
     res.sendFile(dirPublic + '/form.html');
 });
 
