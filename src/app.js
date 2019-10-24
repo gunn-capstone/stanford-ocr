@@ -38,7 +38,6 @@ app.post('/addparticipant', (req, res) => { // TODO data validation
         name: req.body.name,
         email: req.body.email
     }, {merge: true});
-    res.send('gay');
 });
 
 app.post('/upload', (req, res) => {
