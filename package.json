@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/ghostcat17/StanfordSurveyImagetoText#readme",
   "dependencies": {
+    "body-parser": "latest",
     "express": "^4.17.1",
-    "firebase-admin": "^8.6.0",
-    "body-parser": "latest"
+    "firebase-admin": "^8.6.0"
   }
 }

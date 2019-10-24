@@ -19,25 +19,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
-    console.log('happened');
-    res.sendFile(dirPublic + '/form.html');
+    // res.sendFile(dirPublic + '/index.html');
+    res.sendFile('index.html', {root: './public/views'});
 });
 
 
-app.post('/addparticipant', (req, res) => { // TODO data validation for id, age, years, percent, name, email
+app.post('/addparticipant', (req, res) => { // TODO data validation
     let dataRef = dataCollection.doc(req.body.id);
     let setData = dataRef.set({
         id: req.body.id, // TODO for loop
         age: req.body.age,
         gender: req.body.gender,
-        specialty: req.body.specialty, // TODO set so "other" option works correctly
+        specialty: req.body.specialty,
         years: req.body.years,
         percent: req.body.percent,
         activities: req.body.activities,
-        // contribute: req.body.contribute, TODO fix so checkboxes input data to firestore
-        // track: req.body.track,
-        // testing: req.body.testing,
-        // ethical: req.body.ethical,
         additional: req.body.additional,
         name: req.body.name,
         email: req.body.email
@@ -63,8 +59,7 @@ app.get('/data', function (req, res, html) {
 });
 
 app.get('/index', function (req, res, html) {
-    console.log('happened');
-    res.sendFile(dirPublic + '/form.html');
+    res.sendFile(dirPublic + '/index.html');
 });
 
 app.listen(port, () => {
