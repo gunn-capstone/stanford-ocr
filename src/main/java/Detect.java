@@ -1,3 +1,5 @@
+// Imports the Google Cloud client library
+
 import com.google.cloud.vision.v1.*;
 import com.google.cloud.vision.v1.Image;
 import com.google.cloud.vision.v1.Feature.Type;
@@ -5,20 +7,37 @@ import com.google.protobuf.ByteString;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Detect {
     public static void main(String[] args) throws Exception {
-        detectText(System.getProperty("user.dir") + "/src/main/resources/image1.jpeg", System.out);
+        detectText(System.getProperty("user.dir") + "/src/main/resources/image 3.jpg", new PrintStream("/Users/95041754/StanfordSurveyImagetoText/src/main/resources/Output.json"));
     }
 
-    private BufferedImage cropImage(BufferedImage src, Rectangle rect, int x, int y) {
-        return src.getSubimage(x, y, rect.width, rect.height);
+
+/*
+private static File cropImage(Rectangle rect, String pathFile) throws Exception{
+
+    BufferedImage image = ImageIO.read(new File(pathFile)).getSubimage(rect.x, rect.y, rect.width, rect.height);
+
+    File outputfile = new File("image.jpg");
+    ImageIO.write(image, "jpg", outputfile);
+    try{
+
+
+        image.getGraphics().drawLine(1, 1, image.getWidth()-1, image.getHeight()-1);
+        image.getGraphics().drawLine(1, image.getHeight()-1, image.getWidth()-1, 1);
+
+        ImageIO.write(image, "jpg", "./resources/untitled.jpg");
     }
+    catch (IOException e){
+        e.printStackTrace();
+    }
+    return outputfile;
+}*/
+
 
     public static void detectText(String filePath, PrintStream out) throws Exception, IOException {
         List<AnnotateImageRequest> requests = new ArrayList<>();
@@ -47,11 +66,6 @@ public class Detect {
                     out.printf("Position : %s\n", annotation.getBoundingPoly());
                 }
             }
-        }
-        catch (IOException e){
-            System.out.println("Credentials not detected, see discord for .json");
-            e.printStackTrace();
-            System.exit(1);
         }
     }
 }

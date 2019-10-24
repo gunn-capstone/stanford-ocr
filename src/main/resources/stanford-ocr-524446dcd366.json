@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "stanford-ocr",
+  "private_key_id": "524446dcd36638384758ad8e5c7b907681e14166",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8Yhim+nZ0CE/v\n2UalOo/+uqrndWNU1/k9RzgM2p40sKzbbA3PbjCIU96wKUAEK9sAgfsocayaelm+\nHTbHYR4zWnF6faqoAAtibs7SKPNicWetVhzm9tq8LSEHhg71/Jow6Pm713ovnSm2\nxq2ebWYZ0vE5QZrDm5KNV46yo6ZjoT84luIFIx77S5pVcqrHcvgJZF+MQGTXeWBO\n5HLAd+uKpQ+3E7kXOe+dperTHgQncDhZ/sxBcHe2ybSMaaDxwpfU3LYTJNnLdi8A\nQftujytIas7ZiuOyJNU36WYFCOnt00lWeiSGUVp1vv7n9P8chC0lXUyV8eOlDLKY\nlyu2DuKNAgMBAAECggEAC7d9jrPToT+RGpBk2fWsq2xty8vxJn+brhQwvW/tg3Ed\nAeAUcyXd2ToqMW0SC7sJ5IaxGeC0GmmTYlqLzoEmW+L7XYx/tvJFwv9fAr2ZobJU\nVKN0qb2JzkbE9U8BEuCoBcm/xU9Pd12q5gYxGez2UD3eqK/WvJAqYHslJ3bmlu9U\nIU1RHC9064hgGy7IyHOltPGp57SordnRtnpDI+fvZzGOmglvtUAHRAh0rr3XQv78\nW+WF8mvSqXkNBhB5TtvxS0BkCKWJV/FpyQemfwNg8/bS5/1PY/lnpzQd26HweVM4\nrpA+cWiG4tHX/9Oge4Ql3LDlvSWecvqFqXSKgnJ4mwKBgQD66RcdOiM+ntEaCkaQ\n5m28R+kG9DsA3xIzha18NSuJXDCowwtaNv0jFXJ44E4pMAQhWjOCUsuJpyaDLLKs\n1J/w36Kg5yvqQzEQVFheztjgA/6mcuhX3VjmGgJyesjmNPT3RZjGznqErBqetifJ\nJa6hVDQRK4vDQ0E83RuAuhjuxwKBgQDANFGXoE85B+TsqJGgRoF7PAqsrQELF2hN\nKe9BGlyD5jDLwidD69dmli6Qcst1duDJ+jOTCigMmMHB+8sh1dDnLGOBSWRHat88\nuhQzqv5HtTDY9HmS9muNm0tnEs8zgoqEvc496KPPKTcruLJnyk7u5o+bcLg8oJRp\n6ogS7P5gCwKBgQCuGj1Kr4OzOPp5KjYq52mvoupERAYJJcB4dcKalD5gctLk12oy\nMEPYK1KiI2q407OZ/QAO5yqKmqxzivl0SZmtx1AOfDoRtIv/+7bSGo+MadkyYDtu\ndI3yJIwcKazraEWuquFG2hFTrCRQiq7yuS4Cje4PF/tEA4/qDra9zOPuEwKBgAji\nIidE5IR5Re5eOCTVPWTJuKCUemjd0xdF6eXzZvU9rWGtfo0YGGOIa2yHsbmjHe6X\n3sxb+s/iO4pQrenJbRdSKOMv1i+q09iFrStaKth7ml9cpUXSl9P6qniAGQ2Dag2K\njD62QuPvPrqJlc1QP2exRk/j3NAIh/OBQHrHc1ZTAoGAT1wqrk8H3NkKaOcZ5IG0\nxrKCwgnNxOh0QPZsBQ/bDU833SrpYAL/UJKCro3pWINoXN69HlO/r2Cww9rufKc1\nfSCuM7ugQOILejLW4GQUQzKv2fRD/hWVS3pMGeHIFrMUP65fG3yk+pG3CmvAY+kt\n1xvornd+xsB+xuiOt/XXGD4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "stanford-ocr@stanford-ocr.iam.gserviceaccount.com",
+  "client_id": "111930566378697296620",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/stanford-ocr%40stanford-ocr.iam.gserviceaccount.com"
+}
