@@ -4,16 +4,16 @@
     <!--TODO stylesheet-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="dark_css.css">
-    <title>Stanford Hospital Database System</title>
+    <title>Manual Form Entry</title>
 </head>
 <body>
 <div class="wrapper">
-    <h1>Welcome to Stanford Hospital's Database System!</h1>
     <form action="/addparticipant" method="post">
         <h2>Enter Your Information</h2>
         <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
 
         <h3>Basic Information</h3>
+
         <p>
             <label for="basic_1">
                 <span>Participant ID: </span>
@@ -74,7 +74,9 @@
                 </li>
             </ul>
         </fieldset>
+
         <h3>Career Information</h3>
+
         <fieldset>
             <legend>Surgical Specialty <strong><abbr title="required">*</abbr></strong></legend>
             <ul style="list-style-type:none;">
@@ -192,7 +194,9 @@
                 </li>
             </ul>
         </fieldset>
+
         <h3>Survey Information</h3>
+
         <p>
             <input type="checkbox" id="survey_1" name="contribute" value="contribute">
             <label for="survey_1">
@@ -220,14 +224,18 @@
                         in order to protect the public?</span>
             </label>
         </p>
+
         <h3>Other Information:</h3>
+
         <p>
             <label for="other_1">
                 <span>Additional Comments: </span>
             </label>
             <textarea id="other_1" name="additional"></textarea>
         </p>
+
         <h3>Optional Recontact Information:</h3>
+
         <p>
             <label for="optional_1">
                 <span>Name: </span>
@@ -240,14 +248,15 @@
             </label>
             <input type="text" id="optional_2" name="email">
         </p>
+
         <input type="submit" value="Add Participant">
     </form>
 
-    <input type="checkbox" name="" id="switch">
-    <label for="switch" class="switch-label">
-        <div class="toggle"></div>
-    </label>
 </div>
+<input type="checkbox" name="" id="switch">
+<label for="switch" class="switch-label">
+    <div class="toggle"></div>
+</label>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

@@ -401,3 +401,5 @@ gradle-app.setting
 # End of https://www.gitignore.io/api/node,java,macos,gradle,intellij,webstorm,jetbrains,sublimetext
 
 .idea/
+
+survey_data*
