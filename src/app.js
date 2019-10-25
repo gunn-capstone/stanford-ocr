@@ -49,14 +49,6 @@ app.post('/upload', (req, res) => {
     res.send('gay');
 });
 
-app.get('/data', function (req, res, html) {
-    res.sendFile(dirPublic + '/data.html');
-});
-
-app.get('/data', function (req, res, html) {
-    res.sendFile(dirPublic + '/data.html');
-});
-
 app.get('/index', function (req, res, html) {
     res.sendFile(dirPublic + '/index.html');
 });
