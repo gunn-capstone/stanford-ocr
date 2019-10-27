@@ -6,4 +6,4 @@ $('#switch').on('click', () => {
         $('.wrapper').removeClass('dark');
         $('.wrapper').removeClass('white');
     }
-})
+});
