@@ -403,3 +403,4 @@ gradle-app.setting
 .idea/
 
 survey_data*
+output.txt
