@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Detect {
-    public static void main(String[] args) throws Exception {
-        detectText(System.getProperty("user.dir") + "/src/main/resources/image 3.jpg", new PrintStream("/Users/95041754/StanfordSurveyImagetoText/src/main/resources/Output.json"));
+    public static void main(String[] args) throws Exception { // dont use absolute paths >:(
+        detectText(System.getProperty("user.dir") + "/src/main/resources/image 3.jpg", new PrintStream(System.getProperty("user.dir") + "/src/main/resources/output.txt"));
     }
 
 

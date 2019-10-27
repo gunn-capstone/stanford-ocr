@@ -63,6 +63,13 @@ app.get('/download', function (req, res) {
     res.download(filepath); // i dont know why this doesnt fucking work
 });
 
+app.get('/test', function (req, res) { // doesnt work yet but whatever
+    let child = require('child_process').spawn(
+        'java', ['-jar', __dirname + 'detect.jar']
+    );
+    res.send('gay');
+});
+
 const port = process.env.port || 8080;
 app.listen(port, () => {
     console.log("Server listening on port " + port);
