@@ -63,11 +63,36 @@ app.get('/download', function (req, res) {
     res.download(filepath); // i dont know why this doesnt fucking work
 });
 
+async function detect() {
+    const vision = require('@google-cloud/vision');
+    const client = new vision.ImageAnnotatorClient();
+
+    const fileName = __dirname + '/resources/image 2.jpg';
+    const [result] = await client.documentTextDetection(fileName);
+    const fullTextAnnotation = result.fullTextAnnotation;
+    console.log(`Full text: ${fullTextAnnotation.text}`);
+    fullTextAnnotation.pages.forEach(page => {
+        page.blocks.forEach(block => {
+            console.log(`Block confidence: ${block.confidence}`);
+            block.paragraphs.forEach(paragraph => {
+                console.log(`Paragraph confidence: ${paragraph.confidence}`);
+                paragraph.words.forEach(word => {
+                    const wordText = word.symbols.map(s => s.text).join('');
+                    console.log(`Word text: ${wordText}`);
+                    console.log(`Word confidence: ${word.confidence}`);
+                    word.symbols.forEach(symbol => {
+                        console.log(`Symbol text: ${symbol.text}`);
+                        console.log(`Symbol confidence: ${symbol.confidence}`);
+                    });
+                });
+            });
+        });
+    });
+}
+
 app.get('/test', function (req, res) { // doesnt work yet but whatever
-    let child = require('child_process').spawn(
-        'java', ['-jar', __dirname + 'detect.jar']
-    );
-    res.send('gay');
+    detect();
+    res.send('huh');
 });
 
 const port = process.env.port || 8080;

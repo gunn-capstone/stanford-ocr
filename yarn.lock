@@ -109,6 +109,15 @@
     through2 "^3.0.0"
     xdg-basedir "^4.0.0"
 
+"@google-cloud/vision@latest":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@google-cloud/vision/-/vision-1.5.0.tgz#91522350bbe64da23f48df322f4ed9ad2f3002e3"
+  integrity sha512-SuKMjJkbOdpSbVOrBRqTX4bQ3s+Z/F0IdOYtpELfenQZgGL/4E/W97QyW+NBWjfqrWT2zTUj+5imvjD0PNppbg==
+  dependencies:
+    "@google-cloud/promisify" "^1.0.0"
+    google-gax "^1.6.3"
+    is "^3.2.1"
+
 "@grpc/grpc-js@0.6.9":
   version "0.6.9"
   resolved "https://registry.yarnpkg.com/@grpc/grpc-js/-/grpc-js-0.6.9.tgz#49e0b32b92b822df294cc576df169cc6112063b4"
@@ -630,7 +639,7 @@ google-auth-library@^5.0.0, google-auth-library@^5.5.0:
     jws "^3.1.5"
     lru-cache "^5.0.0"
 
-google-gax@^1.7.5:
+google-gax@^1.6.3, google-gax@^1.7.5:
   version "1.7.5"
   resolved "https://registry.yarnpkg.com/google-gax/-/google-gax-1.7.5.tgz#bc462d378536e14eae8b78d5f195c4173c4893ce"
   integrity sha512-Tz2DFs8umzDcCBTi2W1cY4vEgAKaYRj70g6Hh/MiiZaJizrly7PgyxsIYUGi7sOpEuAbARQymYKvy5mNi8hEbg==
@@ -791,6 +800,11 @@ is-typedarray@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-typedarray/-/is-typedarray-1.0.0.tgz#e479c80858df0c1b11ddda6940f96011fcda4a9a"
   integrity sha1-5HnICFjfDBsR3dppQPlgEfzaSpo=
+
+is@^3.2.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/is/-/is-3.3.0.tgz#61cff6dd3c4193db94a3d62582072b44e5645d79"
+  integrity sha512-nW24QBoPcFGGHJGUwnfpI7Yc5CdqWNdsyHQszVE/z2pKHXzh7FZ5GWhJqSyaQ9wMkQnsTx+kAI8bHlCX4tKdbg==
 
 isarray@0.0.1:
   version "0.0.1"
