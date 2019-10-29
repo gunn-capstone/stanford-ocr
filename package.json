@@ -4,8 +4,9 @@
   "description": "js module for webapp",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node lib/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel --presets es2015 -d lib/ src"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,13 @@
   },
   "homepage": "https://github.com/ghostcat17/StanfordSurveyImagetoText#readme",
   "dependencies": {
+    "@google-cloud/vision": "latest",
     "body-parser": "latest",
-    "express": "^4.17.1",
-    "firebase-admin": "^8.6.0"
+    "firebase-admin": "latest",
+    "express": "latest"
+  },
+  "devDependencies": {
+    "babel-cli": "latest",
+    "babel-preset-es2015": "latest"
   }
 }
