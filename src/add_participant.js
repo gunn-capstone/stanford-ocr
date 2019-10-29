@@ -14,4 +14,4 @@ export function add_participant(req_body) {
         name: req_body.name,
         email: req_body.email
     }, {merge: true});
-};
+}

@@ -5,8 +5,8 @@ body {
 
 #title {
     color: black;
-	margin: 50px auto auto;
-	/*text-align: center;*/
+    margin: 50px auto auto;
+    /*text-align: center;*/
 }
 
 .button {
@@ -25,8 +25,8 @@ body {
 }
 
 #pdf {
-	margin: 100px auto;
-	/*margin-bottom: */
+    margin: 100px auto;
+    /*margin-bottom: */
     width: 300px;
     padding-left: 50px;
     padding-right: 50px;
