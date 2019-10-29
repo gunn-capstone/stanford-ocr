@@ -20,10 +20,10 @@ app.get('/', function (req, res) {
     res.send(dirPublic + 'index.html');
 });
 
-app.post('/addparticipant', (req, res) => { // TODO data validation
+app.post('/addparticipant', (req, res) => {
     let dataRef = dataCollection.doc(req.body.id);
     let setData = dataRef.set({
-        id: req.body.id, // TODO for loop
+        id: req.body.id,
         age: req.body.age,
         gender: req.body.gender,
         specialty: req.body.specialty,

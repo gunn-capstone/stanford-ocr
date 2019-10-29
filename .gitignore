@@ -404,3 +404,4 @@ gradle-app.setting
 
 survey_data*
 output.txt
+*.iml
