@@ -1,27 +1,50 @@
 import express from 'express';
 import {add_participant} from './add_participant';
-import {writeCSV} from './write_csv';
+import {writeCSV} from './writeCSV';
 import {detect} from './detect';
 import admin from 'firebase-admin';
 import bodyParser from 'body-parser';
+import Multer from 'multer';
+import {uploadImageToStorage} from "./uploadFile";
 
 const app = express();
 const dirPublic = (__dirname + '/../public');
 app.use(express.static(dirPublic));
 
-admin.initializeApp({
+admin.initializeApp({ // initialize firestore database
     credential: admin.credential.applicationDefault(),
     databaseURL: 'https://stanford-ocr.firebaseio.com'
 });
 const db = admin.firestore();
 export const dataCollection = db.collection('dataCollection');
-console.log('Firebase Initialized');
 
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // middleware to parse req body into json
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', function (req, res) {
     res.send(dirPublic + 'index.html');
+});
+
+const multer = Multer({
+    storage: Multer.memoryStorage(),
+    limits: {
+        fileSize: 5 * 1024 * 1024 // no larger than 5mb, can be changed
+    }
+});
+
+app.post('/upload', multer.single('file'), (req, res) => {
+    console.log('Upload Image');
+
+    let file = req.file;
+    if (file) {
+        uploadImageToStorage(file).then((success) => {
+            res.status(200).send({
+                status: 'success'
+            });
+        }).catch((error) => {
+            console.error(error);
+        });
+    }
 });
 
 app.post('/add_participant', (req, res) => {
