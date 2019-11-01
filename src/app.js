@@ -26,6 +26,7 @@ app.get('/', function (req, res) {
 
 app.post('/add_participant', (req, res) => {
     add_participant(req.body);
+    console.log(req.body);
     res.sendFile('form.html', {root: dirPublic});
 });
 
