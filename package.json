@@ -4,9 +4,9 @@
   "description": "js module for webapp",
   "main": "src/app.js",
   "scripts": {
-    "start": "node lib/app.js",
+    "start": "node bin/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel --presets es2015 -d lib/ src"
+    "build": "babel --presets es2015 -d bin/ src"
   },
   "repository": {
     "type": "git",
