@@ -6,75 +6,75 @@
     <title>Manual Form Entry</title>
 </head>
 <body>
-<div class="wrapper">
-    <form action="/add_participant" method="post">
-        <h2>Enter Your Information</h2>
-        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+    <div class="wrapper">
+        <form action="/add_participant" method="post">
+            <h2>Enter Your Information</h2>
+            <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
 
-        <h3>Basic Information</h3>
+            <h3>Basic Information</h3>
 
-        <p>
-            <label for="basic_1">
-                <span>Participant ID: </span>
-                <strong><abbr title="required">*</abbr></strong>
-            </label>
-            <input type="text" id="basic_1" name="id">
-        </p>
-        <p>
-            <label for="basic_2">
-                <span>Age: </span>
-                <strong><abbr title="required">*</abbr></strong>
-            </label>
-            <input type="text" id="basic_2" name="age">
-        </p>
-        <fieldset>
-            <legend>Gender <strong><abbr title="required">*</abbr></strong></legend>
-            <ul style="list-style-type:none;">
-                <li>
-                    <label for="gender_1">
-                        <input type="radio" id="gender_1" name="gender" value="male">
-                        Male
-                    </label>
-                </li>
-                <li>
-                    <label for="gender_2">
-                        <input type="radio" id="gender_2" name="gender" value="female">
-                        Female
-                    </label>
-                </li>
-                <li>
-                    <label for="gender_3">
-                        <input type="radio" id="gender_3" name="gender" value="other">
-                        Other
-                    </label>
-                </li>
-            </ul>
-        </fieldset>
-        <fieldset>
-            <legend>Handedness <strong><abbr title="required">*</abbr></strong></legend>
-            <ul style="list-style-type:none;">
-                <li>
-                    <label for="handedness_1">
-                        <input type="radio" id="handedness_1" name="handedness" value="right">
-                        Right
-                    </label>
-                </li>
-                <li>
-                    <label for="handedness_2">
-                        <input type="radio" id="handedness_2" name="handedness" value="left">
-                        Left
-                    </label>
-                </li>
-                <li>
-                    <label for="handedness_3">
-                        <input type="radio" id="handedness_3" name="handedness" value="ambidextrous">
-                        Ambidextrous
-                    </label>
-                </li>
-            </ul>
-        </fieldset>
+            <p>
+                <label for="basic_1">
+                    <span>Participant ID: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="basic_1" name="id">
+            </p>
+            <p>
+                <label for="basic_2">
+                    <span>Age: </span>
+                    <strong><abbr title="required">*</abbr></strong>
+                </label>
+                <input type="text" id="basic_2" name="age">
+            </p>
+            <fieldset>
+                <legend>Gender <strong><abbr title="required">*</abbr></strong></legend>
+                <ul style="list-style-type:none;">
+                    <li>
+                        <label for="gender_1">
+                            <input type="radio" id="gender_1" name="gender" value="male">
+                            Male
+                        </label>
+                    </li>
+                    <li>
+                        <label for="gender_2">
+                            <input type="radio" id="gender_2" name="gender" value="female">
+                            Female
+                        </label>
+                    </li>
+                    <li>
+                        <label for="gender_3">
+                            <input type="radio" id="gender_3" name="gender" value="other">
+                            Other
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset>
+                <legend>Handedness <strong><abbr title="required">*</abbr></strong></legend>
+                <ul style="list-style-type:none;">
+                    <li>
+                        <label for="handedness_1">
+                            <input type="radio" id="handedness_1" name="handedness" value="right">
+                            Right
+                        </label>
+                    </li>
+                    <li>
+                        <label for="handedness_2">
+                            <input type="radio" id="handedness_2" name="handedness" value="left">
+                            Left
+                        </label>
+                    </li>
+                    <li>
+                        <label for="handedness_3">
+                            <input type="radio" id="handedness_3" name="handedness" value="ambidextrous">
+                            Ambidextrous
+                        </label>
+                    </li>
+                </ul>
+            </fieldset>
 
-        <h3>Career Information</h3>
+            <h3>Career Information</h3>
 
         <fieldset>
             <legend>Surgical Specialty <strong><abbr title="required">*</abbr></strong></legend>
@@ -242,7 +242,7 @@
             </ul>
         </fieldset>
 
-        <h3>Survey Information</h3>
+            <h3>Survey Information</h3>
 
         <p>
             <input type="checkbox" id="survey_1" name="contribute" value="true">
@@ -269,44 +269,45 @@
             <label for="survey_4">
                     <span>Do you believe that there is any ethical obligation to have surgeons' skills and judgement tested
                     in order to protect the public?</span>
-            </label>
-        </p>
+                </label>
+            </p>
 
-        <h3>Other Information:</h3>
+            <h3>Other Information:</h3>
 
-        <p>
-            <label for="other_1">
-                <span>Additional Comments: </span>
-            </label>
-            <textarea id="other_1" name="additional"></textarea>
-        </p>
+            <p>
+                <label for="other_1">
+                    <span>Additional Comments: </span>
+                </label>
+                <textarea id="other_1" name="additional"></textarea>
+            </p>
 
-        <h3>Optional Recontact Information:</h3>
+            <h3>Optional Recontact Information:</h3>
 
-        <p>
-            <label for="optional_1">
-                <span>Name: </span>
-            </label>
-            <input type="text" id="optional_1" name="name">
-        </p>
-        <p>
-            <label for="optional_2">
-                <span>E-Mail Address: </span>
-            </label>
-            <input type="text" id="optional_2" name="email">
-        </p>
+            <p>
+                <label for="optional_1">
+                    <span>Name: </span>
+                </label>
+                <input type="text" id="optional_1" name="name">
+            </p>
+            <p>
+                <label for="optional_2">
+                    <span>E-Mail Address: </span>
+                </label>
+                <input type="text" id="optional_2" name="email">
+            </p>
+            <button type="submit" value="submit">Submit</button>
 
-        <input type="submit" value="Add Participant">
-    </form>
-    <input type="checkbox" name="" id="switch">
-    <label for="switch" class="switch-label">
-        <div class="toggle"></div>
-    </label>
-</div>
+        </form>
+        <br>
+        <input type="checkbox" name="" id="switch">
+        <label for="switch" class="switch-label">
+            <div class="toggle"></div>
+        </label>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-<script src="dark_script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="dark_script.js"></script>
 </body>
 </html>
