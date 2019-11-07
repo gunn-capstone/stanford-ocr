@@ -1,6 +1,6 @@
 import express from 'express';
-import {add_participant} from './add_participant';
-import {writeCSV} from './write_csv';
+import {addParticipant} from './addParticipant';
+import {writeCSV} from './writeCSV';
 import {detect} from './detect';
 import admin from 'firebase-admin';
 import bodyParser from 'body-parser';
@@ -24,8 +24,8 @@ app.get('/', function (req, res) {
     res.send(dirPublic + 'index.html');
 });
 
-app.post('/add_participant', (req, res) => {
-    add_participant(req.body, res);
+app.post('/addParticipant', (req, res) => {
+    addParticipant(req.body, res);
     res.sendFile('form.html', {root: dirPublic});
 });
 

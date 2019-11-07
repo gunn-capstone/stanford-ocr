@@ -9,9 +9,9 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
-var _add_participant = require('./add_participant');
+var _addParticipant = require('./addParticipant');
 
-var _write_csv = require('./write_csv');
+var _writeCSV = require('./writeCSV');
 
 var _detect = require('./detect');
 
@@ -44,8 +44,8 @@ app.get('/', function (req, res) {
     res.send(dirPublic + 'index.html');
 });
 
-app.post('/add_participant', function (req, res) {
-    (0, _add_participant.add_participant)(req.body, res);
+app.post('/addParticipant', function (req, res) {
+    (0, _addParticipant.addParticipant)(req.body, res);
     res.sendFile('form.html', { root: dirPublic });
 });
 
@@ -53,7 +53,7 @@ app.get('/download', function (req, res) {
     // i dunno why this doesnt work
     var date_ob = new Date();
     var filepath = __dirname + '/../survey_data_' + date_ob.getFullYear() + "_" + ("0" + (date_ob.getMonth() + 1)).slice(-2) + "_" + ("0" + date_ob.getDate()).slice(-2) + "_" + date_ob.getHours() + "_" + date_ob.getMinutes() + ".txt";
-    (0, _write_csv.writeCSV)(filepath);
+    (0, _writeCSV.writeCSV)(filepath);
     res.download(filepath);
 });
 
