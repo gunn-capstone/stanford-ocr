@@ -1,119 +1,121 @@
 <!DOCTYPE html>
 <html lang="">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="dark_css.css">
     <title>Manual Form Entry</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="dark_css.css" rel="stylesheet" type="text/css">
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
-        <form action="/add_participant" method="post">
-            <h2>Enter Your Information</h2>
-            <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+<div class="wrapper">
+    <form action="/add_participant" method="post">
+        <h2>Enter Your Information</h2>
+        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
 
-            <h3>Basic Information</h3>
+        <h3>Basic Information</h3>
 
-            <p>
-                <label for="basic_1">
-                    <span>Participant ID: </span>
-                    <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <input type="text" id="basic_1" name="id">
-            </p>
-            <p>
-                <label for="basic_2">
-                    <span>Age: </span>
-                    <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <input type="text" id="basic_2" name="age">
-            </p>
-            <fieldset>
-                <legend>Gender <strong><abbr title="required">*</abbr></strong></legend>
-                <ul style="list-style-type:none;">
-                    <li>
-                        <label for="gender_1">
-                            <input type="radio" id="gender_1" name="gender" value="male">
-                            Male
-                        </label>
-                    </li>
-                    <li>
-                        <label for="gender_2">
-                            <input type="radio" id="gender_2" name="gender" value="female">
-                            Female
-                        </label>
-                    </li>
-                    <li>
-                        <label for="gender_3">
-                            <input type="radio" id="gender_3" name="gender" value="other">
-                            Other
-                        </label>
-                    </li>
-                </ul>
-            </fieldset>
-            <fieldset>
-                <legend>Handedness <strong><abbr title="required">*</abbr></strong></legend>
-                <ul style="list-style-type:none;">
-                    <li>
-                        <label for="handedness_1">
-                            <input type="radio" id="handedness_1" name="handedness" value="right">
-                            Right
-                        </label>
-                    </li>
-                    <li>
-                        <label for="handedness_2">
-                            <input type="radio" id="handedness_2" name="handedness" value="left">
-                            Left
-                        </label>
-                    </li>
-                    <li>
-                        <label for="handedness_3">
-                            <input type="radio" id="handedness_3" name="handedness" value="ambidextrous">
-                            Ambidextrous
-                        </label>
-                    </li>
-                </ul>
-            </fieldset>
+        <p>
+            <label for="basic_1">
+                <span>Participant ID: </span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input id="basic_1" name="id" type="text">
+        </p>
+        <p>
+            <label for="basic_2">
+                <span>Age: </span>
+                <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input id="basic_2" name="age" type="text">
+        </p>
+        <fieldset>
+            <legend>Gender <strong><abbr title="required">*</abbr></strong></legend>
+            <ul style="list-style-type:none;">
+                <li>
+                    <label for="gender_1">
+                        <input id="gender_1" name="gender" type="radio" value="male">
+                        Male
+                    </label>
+                </li>
+                <li>
+                    <label for="gender_2">
+                        <input id="gender_2" name="gender" type="radio" value="female">
+                        Female
+                    </label>
+                </li>
+                <li>
+                    <label for="gender_3">
+                        <input id="gender_3" name="gender" type="radio" value="other">
+                        Other
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Handedness <strong><abbr title="required">*</abbr></strong></legend>
+            <ul style="list-style-type:none;">
+                <li>
+                    <label for="handedness_1">
+                        <input id="handedness_1" name="handedness" type="radio" value="right">
+                        Right
+                    </label>
+                </li>
+                <li>
+                    <label for="handedness_2">
+                        <input id="handedness_2" name="handedness" type="radio" value="left">
+                        Left
+                    </label>
+                </li>
+                <li>
+                    <label for="handedness_3">
+                        <input id="handedness_3" name="handedness" type="radio" value="ambidextrous">
+                        Ambidextrous
+                    </label>
+                </li>
+            </ul>
+        </fieldset>
 
-            <h3>Career Information</h3>
+        <h3>Career Information</h3>
 
         <fieldset>
             <legend>Surgical Specialty <strong><abbr title="required">*</abbr></strong></legend>
             <ul style="list-style-type:none;">
                 <li>
                     <label for="specialty_1">
-                        <input type="radio" id="specialty_1" name="specialty" value="general">
+                        <input id="specialty_1" name="specialty" type="radio" value="general">
                         General Surgery
                     </label>
                 </li>
                 <li>
                     <label for="specialty_2">
-                        <input type="radio" id="specialty_2" name="specialty" value="colorectal">
+                        <input id="specialty_2" name="specialty" type="radio" value="colorectal">
                         Colorectal
                     </label>
                 </li>
                 <li>
                     <label for="specialty_3">
-                        <input type="radio" id="specialty_3" name="specialty" value="surgonc">
+                        <input id="specialty_3" name="specialty" type="radio" value="surgonc">
                         Surgical Oncology
                     </label>
                 </li>
                 <li>
                     <label for="specialty_4">
-                        <input type="radio" id="specialty_4" name="specialty" value="trauma">
+                        <input id="specialty_4" name="specialty" type="radio" value="trauma">
                         Trauma
                     </label>
                 </li>
                 <li>
                     <label for="specialty_5">
-                        <input type="radio" id="specialty_5" name="specialty" value="mis">
+                        <input id="specialty_5" name="specialty" type="radio" value="mis">
                         MIS
                     </label>
                 </li>
                 <li>
                     <label for="specialty_6">
-                        <input type="radio" id="specialty_6" name="specialty" value="">
+                        <input id="specialty_6" name="specialty" type="radio" value="">
                         Other:
-                        <input type="text" id="specialty_6_text" name="specialty">
+                        <input id="specialty_6_text" name="specialty" type="text">
                     </label>
                 </li>
             </ul>
@@ -123,14 +125,14 @@
                 <span>Years in Practice: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="text" id="years" name="years">
+            <input id="years" name="years" type="text">
         </p>
         <p>
             <label for="percent">
                 <span>Percent Time Spent in Operating Room: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="text" id="percent" name="percent">
+            <input id="percent" name="percent" type="text">
         </p>
         <fieldset>
             <legend>Significant Administrative Responsibilities <u>Greater than 50% Effort</u><i>(circle all that
@@ -138,33 +140,33 @@
             <ul style="list-style-type:none;">
                 <li>
                     <label for="responsibility_1">
-                        <input type="checkbox" id="responsibility_1" name="responsibilities" value="research">
+                        <input id="responsibility_1" name="responsibilities" type="checkbox" value="research">
                         Research
                     </label>
                 </li>
                 <li>
                     <label for="responsibility_2">
-                        <input type="checkbox" id="responsibility_2" name="responsibilities" value="teaching">
+                        <input id="responsibility_2" name="responsibilities" type="checkbox" value="teaching">
                         Teaching
                     </label>
                 </li>
                 <li>
                     <label for="responsibility_3">
-                        <input type="checkbox" id="responsibility_3" name="responsibilities" value="institutional">
+                        <input id="responsibility_3" name="responsibilities" type="checkbox" value="institutional">
                         Institutional Leadership
                     </label>
                 </li>
                 <li>
                     <label for="responsibility_4">
-                        <input type="checkbox" id="responsibility_4" name="responsibilities" value="societal">
+                        <input id="responsibility_4" name="responsibilities" type="checkbox" value="societal">
                         Societal Leadership
                     </label>
                 </li>
                 <li>
                     <label for="responsibility_5">
-                        <input type="checkbox" id="responsibility_5" name="responsibilities" value="other">
+                        <input id="responsibility_5" name="responsibilities" type="checkbox" value="other">
                         Other:
-                        <input type="text" id="responsibility_5_text" name="responsibilities">
+                        <input id="responsibility_5_text" name="responsibilities" type="text">
                     </label>
                 </li>
             </ul>
@@ -177,7 +179,7 @@
                 <span>Years Retired From Surgery: </span>
                 <strong><abbr title="required">*</abbr></strong>
             </label>
-            <input type="text" id="retirement_1" name="years_retired">
+            <input id="retirement_1" name="years_retired" type="text">
         </p>
         <fieldset>
             <legend>Retirement Activities <i>(circle all that apply)</i> <strong><abbr
@@ -186,128 +188,128 @@
             <ul style="list-style-type:none;">
                 <li>
                     <label for="activity_1">
-                        <input type="checkbox" id="activity_1" name="activities" value="non-surgery">
+                        <input id="activity_1" name="activities" type="checkbox" value="non-surgery">
                         Non-Surgical Clinical Practice
                     </label>
                 </li>
                 <li>
                     <label for="activity_2">
-                        <input type="checkbox" id="activity_2" name="activities" value="research">
+                        <input id="activity_2" name="activities" type="checkbox" value="research">
                         Research
                     </label>
                 </li>
                 <li>
                     <label for="activity_3">
-                        <input type="checkbox" id="activity_3" name="activities" value="teaching">
+                        <input id="activity_3" name="activities" type="checkbox" value="teaching">
                         Teaching
                     </label>
                 </li>
                 <li>
                     <label for="activity_4">
-                        <input type="checkbox" id="activity_4" name="activities" value="academic">
+                        <input id="activity_4" name="activities" type="checkbox" value="academic">
                         Academic Leadership
                     </label>
                 </li>
                 <li>
                     <label for="activity_5">
-                        <input type="checkbox" id="activity_5" name="activities" value="societal">
+                        <input id="activity_5" name="activities" type="checkbox" value="societal">
                         Society Leadership
                     </label>
                 </li>
                 <li>
                     <label for="activity_6">
-                        <input type="checkbox" id="activity_6" name="activities" value="travel">
+                        <input id="activity_6" name="activities" type="checkbox" value="travel">
                         Travel
                     </label>
                 </li>
                 <li>
                     <label for="activity_7">
-                        <input type="checkbox" id="activity_7" name="activities" value="arts">
+                        <input id="activity_7" name="activities" type="checkbox" value="arts">
                         Arts/Crafts
                     </label>
                 </li>
                 <li>
                     <label for="activity_8">
-                        <input type="checkbox" id="activity_8" name="activities" value="machinery">
+                        <input id="activity_8" name="activities" type="checkbox" value="machinery">
                         Machinery
                     </label>
                 </li>
                 <li>
                     <label for="activity_9">
-                        <input type="checkbox" id="activity_9" name="activities" value="other">
+                        <input id="activity_9" name="activities" type="checkbox" value="other">
                         Other:
-                        <input type="text" id="activity_9_text" name="activities">
+                        <input id="activity_9_text" name="activities" type="text">
                     </label>
                 </li>
             </ul>
         </fieldset>
 
-            <h3>Survey Information</h3>
+        <h3>Survey Information</h3>
 
         <p>
-            <input type="checkbox" id="survey_1" name="contribute" value="true">
+            <input id="survey_1" name="contribute" type="checkbox" value="true">
             <label for="survey_1">
                 <span>I am interested in contributing my data to a longitudinal database of physician performance: </span>
             </label>
         </p>
         <p>
-            <input type="checkbox" id="survey_2" name="track" value="true">
+            <input id="survey_2" name="track" type="checkbox" value="true">
             <label for="survey_2">
                     <span>I would be interested in tracking my own performance data relative to a larger database year after
                     year: </span>
             </label>
         </p>
         <p>
-            <input type="checkbox" id="survey_3" name="testing" value="true">
+            <input id="survey_3" name="testing" type="checkbox" value="true">
             <label for="survey_3">
                     <span>If testing was reliable and confidential, would you utilize testing to assess your own skills and
                     judgement over time? </span>
             </label>
         </p>
         <p>
-            <input type="checkbox" id="survey_4" name="ethical" value="true">
+            <input id="survey_4" name="ethical" type="checkbox" value="true">
             <label for="survey_4">
                     <span>Do you believe that there is any ethical obligation to have surgeons' skills and judgement tested
                     in order to protect the public?</span>
-                </label>
-            </p>
+            </label>
+        </p>
 
-            <h3>Other Information:</h3>
+        <h3>Other Information:</h3>
 
-            <p>
-                <label for="other_1">
-                    <span>Additional Comments: </span>
-                </label>
-                <textarea id="other_1" name="additional"></textarea>
-            </p>
+        <p>
+            <label for="other_1">
+                <span>Additional Comments: </span>
+            </label>
+            <textarea id="other_1" name="additional"></textarea>
+        </p>
 
-            <h3>Optional Recontact Information:</h3>
+        <h3>Optional Recontact Information:</h3>
 
-            <p>
-                <label for="optional_1">
-                    <span>Name: </span>
-                </label>
-                <input type="text" id="optional_1" name="name">
-            </p>
-            <p>
-                <label for="optional_2">
-                    <span>E-Mail Address: </span>
-                </label>
-                <input type="text" id="optional_2" name="email">
-            </p>
-            <button type="submit" value="submit">Submit</button>
+        <p>
+            <label for="optional_1">
+                <span>Name: </span>
+            </label>
+            <input id="optional_1" name="name" type="text">
+        </p>
+        <p>
+            <label for="optional_2">
+                <span>E-Mail Address: </span>
+            </label>
+            <input id="optional_2" name="email" type="text">
+        </p>
+        <button type="submit" value="submit">Submit</button>
 
-        </form>
-        <br>
-        <input type="checkbox" name="" id="switch">
-        <label for="switch" class="switch-label">
-            <div class="toggle"></div>
-        </label>
-    </div>
+    </form>
+    <br>
+    <input id="switch" name="" type="checkbox">
+    <label class="switch-label" for="switch">
+        <div class="toggle"></div>
+    </label>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="dark_script.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="dark_script.js"></script>
 </body>
 </html>

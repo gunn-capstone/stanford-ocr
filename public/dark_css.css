@@ -13,7 +13,7 @@ body {
 }
 
 .form {
-    background-color: #e7e7e7; color: black /* Gray */
+    background-color: #e7e7e7;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -63,7 +63,7 @@ body {
 }
 
 #switch:checked ~ .switch-label .toggle {
-    height: 12.5px;
+    height: 13px;
     border-radius: 25px 25px 0 0;
     background: transparent;
     box-shadow: 0 -6px 0 0 #fff;
