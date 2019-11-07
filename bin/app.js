@@ -45,7 +45,7 @@ app.get('/', function (req, res) {
 });
 
 app.post('/add_participant', function (req, res) {
-    (0, _add_participant.add_participant)(req.body);
+    (0, _add_participant.add_participant)(req.body, res);
     res.sendFile('form.html', { root: dirPublic });
 });
 
