@@ -5,10 +5,12 @@ import {detect} from './detect';
 import admin from 'firebase-admin';
 import bodyParser from 'body-parser';
 
+// express for web handling
 const app = express();
 const dirPublic = (__dirname + '/../public');
 app.use(express.static(dirPublic));
 
+// firestore for database and file storage
 admin.initializeApp({
     credential: admin.credential.applicationDefault(),
     databaseURL: 'https://stanford-ocr.firebaseio.com'
@@ -17,6 +19,7 @@ const db = admin.firestore();
 export const dataCollection = db.collection('dataCollection');
 console.log('Firebase Initialized');
 
+// body parser for req body parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -24,12 +27,14 @@ app.get('/', function (req, res) {
     res.send(dirPublic + 'index.html');
 });
 
+// add form data to database
 app.post('/addParticipant', (req, res) => {
     addParticipant(req.body, res);
     res.sendFile('form.html', {root: dirPublic});
 });
 
-app.get('/download', function (req, res) { // i dunno why this doesnt work
+// to write database to csv file for export; doesnt work idk why
+app.get('/download', function (req, res) {
     let date_ob = new Date();
     let filepath = `${__dirname}/../survey_data_` +
         date_ob.getFullYear() + "_" + ("0" + (date_ob.getMonth() + 1)).slice(-2) +
@@ -38,7 +43,8 @@ app.get('/download', function (req, res) { // i dunno why this doesnt work
     res.download(filepath);
 });
 
-app.get('/test', function (req, res) { // huh why this no work
+// test of google cloud vision; will be ported to python script by quinn and justin ig
+app.get('/test', function (req, res) {
     detect().then(r => {
     });
     res.send('huh');
