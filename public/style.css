@@ -27,3 +27,9 @@
     margin: auto;
     padding: 50px 10px;
 }
+
+.darkmode {
+    align: 30px !important;
+    position: absolute;
+
+}
