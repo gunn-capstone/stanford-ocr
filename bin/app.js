@@ -67,6 +67,34 @@ app.get('/test', function (req, res) {
     res.send('huh');
 });
 
+// const json2csv = require("json2csv").parse;
+
+// exports.csvJsonReport = functions.https.onRequest((request, response) => {
+
+//   const db = admin.firestore();
+//   const ordersRef = db.collection('dataCollection');
+//   return ordersRef.get()
+//     .then((querySnapshot) => {
+//       const dataCollection = [];
+
+//       querySnapshot.forEach(doc => {
+//         const order = doc.data();
+//         dataCollection.push(order);
+//       });
+//       const csv = json2csv(dataCollection);
+//       response.setHeader(
+//         "Content-disposition",
+//         "attachment; filename=report.csv"
+//       );
+//       response.set("Content-Type", "text/csv");
+//       response.status(200).send(csv)
+//     }).catch((err) => {
+//       console.log(err);
+//     });
+
+// });
+
+
 var port = process.env.port || 8080;
 app.listen(port, function () {
     console.log("Server listening on port " + port);
